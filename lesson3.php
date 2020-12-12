@@ -13,30 +13,31 @@
     <header class="header">
         <nav class="header-menu">
             <ul class="header-list">
-                <li><a href="" class="header-link">Урок 1</a></li>
+                <li><a href="lesson1.php" class="header-link">Урок 1</a></li>
                 <li><a href="lesson2.php" class="header-link">Урок 2</a></li>
                 <li><a href="lesson3.php" class="header-link">Урок 3</a></li>
             </ul>
-        </nav>
+        </nav>    
     </header>
     <main class="main">
         <section class="content">
-<?php
-echo '<table id="multiplication-table">';
-    for ($row = 1; $row <= 2; $row++) {
-        echo '<tr>';
-        for($col = 1 + 5 * ($row-1); $col <= 5 * $row; $col++) {
-            echo '<td>';
-            for($i = 1; $i <= 10; $i++) {
-                echo "{$col} x {$i} = ".($col*$i)."<br>";
-            }
-            echo '</td>';
-        }
-        echo '</tr>';
-    }
-echo '</table>';
+            <?php
 
-?>
+            if(isset($_POST['string'])) {
+                $res = join(array_reverse(str_split($_POST['string'])));
+                echo 'Обработанная строка: <span class="answer">'.$res.'</span> ';
+                echo '<a href="lesson3.php" class="link-back">Назад</a>';
+            }
+            else {
+                echo <<< EOT
+            <form action="" method="post">
+                <label for="input-string">Введите строку:</label>
+                <input type="text" id="input-string" name="string"> &nbsp;
+                <input type="submit">
+            </form>
+EOT;
+            }
+            ?>
         </section>
     </main>
     <footer class="footer">

@@ -100,3 +100,39 @@ body {
     border: 1px solid black;
     padding: 15px;
 }
+
+/*==============*/
+
+input[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ddd;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #333;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#input-string {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+}
+
+.answer {
+    font-size: 20px;
+}
+
+.link-back {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ddd;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #333;
+}
