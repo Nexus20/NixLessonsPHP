@@ -88,3 +88,15 @@ body {
     grid-column: 3 / 4;
     text-align: right;
 }
+
+/*============*/
+
+#multiplication-table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+#multiplication-table td {
+    border: 1px solid black;
+    padding: 15px;
+}

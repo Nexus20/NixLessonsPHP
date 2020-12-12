@@ -13,14 +13,29 @@
     <header class="header">
         <nav class="header-menu">
             <ul class="header-list">
-                <li><a href="lesson1.php" class="header-link">Урок 1</a></li>
+                <li><a href="" class="header-link">Урок 1</a></li>
                 <li><a href="" class="header-link">Урок 2</a></li>
             </ul>
-        </nav>    
+        </nav>
     </header>
     <main class="main">
         <section class="content">
-            <h1>Hello, <b>NIX Education</b></h1>
+<?php
+echo '<table id="multiplication-table">';
+    for ($row = 1; $row <= 2; $row++) {
+        echo '<tr>';
+        for($col = 1 + 5 * ($row-1); $col <= 5 * $row; $col++) {
+            echo '<td>';
+            for($i = 1; $i <= 10; $i++) {
+                echo "{$col} x {$i} = ".($col*$i)."<br>";
+            }
+            echo '</td>';
+        }
+        echo '</tr>';
+    }
+echo '</table>';
+
+?>
         </section>
     </main>
     <footer class="footer">
