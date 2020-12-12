@@ -13,21 +13,52 @@
     <header class="header">
         <nav class="header-menu">
             <ul class="header-list">
-                <li><a href="" class="header-link">Урок 1</a></li>
-                <li><a href="lesson2.php" class="header-link">Урок 2</a></li>
+                <li><a href="lesson1.php" class="header-link">Урок 1</a></li>
+                <li><a href="" class="header-link">Урок 2</a></li>
             </ul>
         </nav>
     </header>
     <main class="main">
         <section class="content">
 <?php
+
+function getStyle($num) {
+    $res = getColor($num%10);
+    if($num > 9) {
+        $res = getColor($num / 10 % 10).$res;
+    }
+    if($num > 99) {
+        $res = getColor($num/100).$res;
+    }
+    return $res;
+}
+
+function getColor($digit) {
+    switch ($digit) {
+        case 1: $color = 'red'; break;
+        case 2: $color = 'green'; break;
+        case 3: $color = 'yellow'; break;
+        case 4: $color = 'blue'; break;
+        case 5: $color = 'orange'; break;
+        case 6: $color = 'lime'; break;
+        case 7: $color = 'pink'; break;
+        case 8: $color = 'cyan'; break;
+        case 9: $color = 'purple'; break;
+        case 0: $color = 'magenta'; break;
+    }
+
+    return '<span style="color: '.$color.'">'.$digit.'</span>';
+}
+
 echo '<table id="multiplication-table">';
     for ($row = 1; $row <= 2; $row++) {
         echo '<tr>';
         for($col = 1 + 5 * ($row-1); $col <= 5 * $row; $col++) {
             echo '<td>';
             for($i = 1; $i <= 10; $i++) {
-                echo "{$col} x {$i} = ".($col*$i)."<br>";
+                echo getStyle($col), ' x ';
+                echo getStyle($i), ' = ';
+                echo getStyle($col*$i), '<br>';
             }
             echo '</td>';
         }

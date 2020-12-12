@@ -14,7 +14,7 @@
         <nav class="header-menu">
             <ul class="header-list">
                 <li><a href="lesson1.php" class="header-link">Урок 1</a></li>
-                <li><a href="" class="header-link">Урок 2</a></li>
+                <li><a href="lesson2.php" class="header-link">Урок 2</a></li>
             </ul>
         </nav>    
     </header>
